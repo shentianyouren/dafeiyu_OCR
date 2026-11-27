@@ -1,0 +1,24 @@
+# 虚拟环境与构建产物（体积大，不进版本库）
+.venv/
+build/
+dist/
+
+# 公式模型 77MB：放在 Release 里，见 README「获取模型文件」
+models/texo/*.onnx
+
+# 运行时生成的东西
+logs/
+config.json
+__pycache__/
+*.py[cod]
+*.log
+
+# 素材源文件（程序只用 assets/ 里处理好的 png）
+大肥鱼.jpg
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.workbuddy/
+Thumbs.db
+desktop.ini

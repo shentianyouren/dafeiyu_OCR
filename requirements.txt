@@ -1,0 +1,27 @@
+# 运行时依赖。公式识别用内置的 Texo（ONNX），复用下面的 onnxruntime，
+# 不引入 torch / transformers / tokenizers。
+# 装机：
+#   python -m venv .venv
+#   .venv\Scripts\pip install -r requirements.txt
+
+PySide6-Essentials>=6.6
+dxcam>=0.3
+numpy>=1.24
+Pillow>=10.0
+# 只有完整版的 RapidOCR 用得到 opencv；精简版会把它一起排除
+opencv-python>=4.8
+
+# 增强文字引擎（手写、复杂排版兜底）+ 公式模型推理，两者共用 onnxruntime
+# RapidOCR 模型约 15MB，Texo 公式模型 77MB，都随包
+rapidocr-onnxruntime>=1.4
+onnxruntime>=1.16
+
+# Windows 系统 OCR（winrt 投影）
+winrt-Windows.Media.Ocr
+winrt-Windows.Graphics.Imaging
+winrt-Windows.Storage.Streams
+winrt-Windows.Foundation
+winrt-Windows.Globalization
+
+# 打包用（仅构建时）
+# pyinstaller>=6.0
